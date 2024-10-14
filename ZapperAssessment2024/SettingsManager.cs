@@ -18,7 +18,11 @@ namespace ZapperAssessment2024
         /// <returns></returns>
         internal static bool SettingsTest(byte settings, byte setting)
         {
-            return (settings & (1 << 8 - setting)) != 0;
+            if (setting < 9)
+            {
+                return (settings & (1 << 8 - setting)) != 0;
+            }
+            return false;
         }
 
         // Question 2.2a function.
