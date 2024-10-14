@@ -63,6 +63,18 @@ namespace ZapperAssessment2024Tester
             }
 
             /// <summary>
+            /// Test for full byte range out of bounds.
+            /// </summary>
+            [TestMethod]
+            public void Settings_False_ForSettingGreaterThan8()
+            {
+                for (byte i = 9; i < byte.MaxValue; i++)
+                {
+                    Assert.IsFalse(SettingsManager.SettingsTest(0b11111111, i));
+                }
+            }
+            
+            /// <summary>
             /// Test writing binary to file.
             /// </summary>
             [TestMethod]
